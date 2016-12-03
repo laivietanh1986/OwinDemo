@@ -14,15 +14,11 @@ namespace OwinDemo
         {
         }
 
-        public override Task Invoke(IOwinContext context)
+        public override  Task Invoke(IOwinContext context)
         {
-           return Task.Run(()=>
-           {
                Debug.WriteLine(
                    $"incomming request{context.Request.Path},{context.Request.Accept},{context.Request.Body}");
-               Next.Invoke(context);
-           });
-            
+              return Next.Invoke(context);
         }
     }
 }

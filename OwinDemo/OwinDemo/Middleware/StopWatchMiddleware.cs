@@ -43,6 +43,7 @@ namespace OwinDemo
                 _option.InCommingAction(context);
                 Next.Invoke(context);
                 _option.OutGoingAction(context);
+              
             });
         }
     }
